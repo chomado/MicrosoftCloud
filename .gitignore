@@ -28,3 +28,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /.vs
+samples/acs-to-teams-meeting/server/csharp/ExerciseACS/local.settings.json

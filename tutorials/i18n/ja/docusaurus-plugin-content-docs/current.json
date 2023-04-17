@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Audio/Video Calling from a Custom App into a Teams Meeting": {
+    "message": "Audio/Video Calling from a Custom App into a Teams Meeting",
+    "description": "The label for category Audio/Video Calling from a Custom App into a Teams Meeting in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.csharp": {
+    "message": "csharp",
+    "description": "The label for category csharp in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.en-us": {
+    "message": "en-us",
+    "description": "The label for category en-us in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ja-jp": {
+    "message": "ja-jp",
+    "description": "The label for category ja-jp in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Authentication App with Next.js and Microsoft Graph": {
+    "message": "Authentication App with Next.js and Microsoft Graph",
+    "description": "The label for category Authentication App with Next.js and Microsoft Graph in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Automate Data Reporting with Azure Functions and Power Automate": {
+    "message": "Automate Data Reporting with Azure Functions and Power Automate",
+    "description": "The label for category Automate Data Reporting with Azure Functions and Power Automate in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Take a Break Reminder App": {
+    "message": "Take a Break Reminder App",
+    "description": "The label for category Take a Break Reminder App in sidebar tutorialSidebar"
+  }
+}

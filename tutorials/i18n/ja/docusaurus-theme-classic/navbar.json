@@ -1,0 +1,14 @@
+{
+  "item.label.Tutorials": {
+    "message": "Tutorials",
+    "description": "Navbar item with label Tutorials"
+  },
+  "item.label.YouTube": {
+    "message": "YouTube",
+    "description": "Navbar item with label YouTube"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  }
+}

@@ -39,7 +39,16 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'ja' ],
+    path: 'i18n',
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+      ja: {
+        htmlLang: 'ja-JP',
+      },
+    },
   },
 
   presets: [
@@ -94,6 +103,10 @@ const config = {
             href: 'https://github.com/microsoft/MicrosoftCloud',
             label: 'GitHub',
             position: 'right',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'left',
           },
         ],
       },
