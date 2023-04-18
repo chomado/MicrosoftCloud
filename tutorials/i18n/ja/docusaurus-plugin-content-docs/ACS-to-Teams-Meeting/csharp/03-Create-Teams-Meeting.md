@@ -69,7 +69,7 @@ sidebar_position: 3
 
     :::
 
-5. ソリューション エクスプローラーで `GraphACSFunctions` プロジェクトをダブル クリックしてプロジェクト ファイルを開きます。以下の `PackageReference` タグで Microsoft Graph や認証のパッケージが含まれています:
+5. ソリューション エクスプローラーで `GraphACSFunctions` プロジェクトをダブル クリックしてプロジェクト ファイルを開きます。以下の `PackageReference` タグで Microsoft Graph や認証のパッケージがプロジェクトに含まれていることを確認します:
 
     ```xml
     <PackageReference Include="Azure.Communication.Identity" Version="1.2.0" />
@@ -173,29 +173,28 @@ sidebar_position: 3
 
 12. `samples/acs-to-teams-meeting/client/react` フォルダーを VS Code で開きます。そして `.env` ファイルを以下の値に変更します:
 
-    ```
-    REACT_APP_TEAMS_MEETING_FUNCTION=http://localhost:7071/api/TeamsMeetingFunction
+```
+REACT_APP_TEAMS_MEETING_FUNCTION=http://localhost:7071/api/TeamsMeetingFunction
 
-    REACT_APP_ACS_USER_FUNCTION=http://localhost:7071/api/ACSTokenFunction
-    ```
+REACT_APP_ACS_USER_FUNCTION=http://localhost:7071/api/ACSTokenFunction
+```
 
-    :::info
+:::info
 
-        これらの値はビルド時に React に渡されるため、必要に応じてビルド プロセス中に必要に応じて簡単に変更することが出来ます。
-    
-    :::
+    これらの値はビルド時に React に渡されるため、必要に応じてビルド プロセス中に必要に応じて簡単に変更することが出来ます。
+
+:::
 
 13. `samples/acs-to-teams-meeting/client/react/App.tsx` ファイルを VS Code で開きます。
 
 14. コンポーネント内の `teamsMeetingLink` の状態変数を探します。ハードコードされている Teams 会議リンクを空文字に置き換えます:
-15. Locate the `teamsMeetingLink` state variable in the component. Remove the hardcoded teams link and replace it with empty quotes:
 
-    ```typescript
-    const [teamsMeetingLink, setTeamsMeetingLink] = useState<string>('');
-    ```
+```typescript
+const [teamsMeetingLink, setTeamsMeetingLink] = useState<string>('');
+```
 
 
-16. `useEffect` 関数を探し、以下のように変更します。先ほど説明した Teams の会議を作成して会議の参加リンクを返す Azure Function の呼び出しを行います:
+15. `useEffect` 関数を探し、以下のように変更します。先ほど説明した Teams の会議を作成して会議の参加リンクを返す Azure Function の呼び出しを行います:
 
     ```typescript
     useEffect(() => {
@@ -223,10 +222,10 @@ sidebar_position: 3
     }, []);
     ```
 
-17. 先に進む前にファイルを保存します。
+16. 先に進む前にファイルを保存します。
 
-18. ターミナル ウィンドウで `react` フォルダーを開いて `npm start` を実行してアプリケーションを実行させてください。
+17. ターミナル ウィンドウで `react` フォルダーを開いて `npm start` を実行してアプリケーションを実行させてください。
 
-19. アプリケーションがビルドされると、ACS の通話の画面が表示され、Microsoft Graph によって動的に作成された Teams の会議に参加できます。
+18. アプリケーションがビルドされると、ACS の通話の画面が表示され、Microsoft Graph によって動的に作成された Teams の会議に参加できます。
 
-20. ターミナル ウィンドウで `Ctrl + C` を押して React のアプリを終了させてください。そして Visual Studio で `Shift + F5` を押すかメニューの `デバッグ --> デバッグの停止` を選択してデバッグを終了させてください。
+19. ターミナル ウィンドウで `Ctrl + C` を押して React のアプリを終了させてください。そして Visual Studio で `Shift + F5` を押すかメニューの `デバッグ --> デバッグの停止` を選択してデバッグを終了させてください。

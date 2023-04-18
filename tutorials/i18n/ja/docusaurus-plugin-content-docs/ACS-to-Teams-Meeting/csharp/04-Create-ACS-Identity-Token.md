@@ -18,9 +18,12 @@ sidebar_position: 4
 3. ACS のユーザー ID やトークンの生成するために使用する `CommunicationIdentityClient` を `local.settings.json` の `ACS_CONNECTION_STRING` に設定した接続文字列を使って生成しています。
 
     ```csharp
-    var config = p.GetRequiredService<IConfiguration>();
-    var connectionString = config.GetValue<string>("ACS_CONNECTION_STRING");
-    return new CommunicationIdentityClient(connectionString);
+    builder.Services.AddSingleton(static p =>
+    {
+        var config = p.GetRequiredService<IConfiguration>();
+        var connectionString = config.GetValue<string>("ACS_CONNECTION_STRING");
+        return new CommunicationIdentityClient(connectionString);
+    });
     ```
 
 4. `ACSTokenFunction.cs` を開いて `ACSTokenFunction` クラスのコンストラクタとフィールドの定義を確認します。
@@ -31,7 +34,7 @@ sidebar_position: 4
             CommunicationTokenScope.VoIP,
         };
         ```
-   - `Startup.cs` で設定した `CommunicationIdentityClient` のインスタンスをコンストラクタで受け取り関数の処理で使用するために `_tokenClient` フィールドに設定しています:
+   - `Startup.cs` で設定した `CommunicationIdentityClient` のインスタンスをコンストラクタで受け取り、関数の処理で使用するために `_tokenClient` フィールドに設定しています:
         ```csharp
         private readonly CommunicationIdentityClient _tokenClient;
         
@@ -41,7 +44,7 @@ sidebar_position: 4
         }
         ```
 
-5. `Run` メソッドを開いて内容を確認します。`_tokenClient` の `CreateUserAsync` メソッドで ACS のユーザーを作成して、`GetTokenAsync` で作成したユーザーのビデオ通話 (`VoIP`) を行うためにアクセストークンを作成してレスポンスとして返しています。
+5. `Run` メソッドを開いて内容を確認します。`_tokenClient` の `CreateUserAsync` メソッドで ACS のユーザーを作成して、`GetTokenAsync` で作成したユーザーのビデオ通話 (`VoIP`) を行うためにアクセストークンを作成しいます。そして、それらをレスポンスとして返しています。
 
     ```csharp
     [FunctionName("ACSTokenFunction")]
