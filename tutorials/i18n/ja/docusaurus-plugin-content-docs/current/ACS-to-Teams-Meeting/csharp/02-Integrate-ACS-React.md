@@ -1,5 +1,5 @@
 ---
-title: 2. Integrate Azure Communication Services Calling into a React App
+title: 2. React アプリに Azure Communication Services (ACS) の通話機能を組み込む
 sidebar_position: 2
 ---
 
